@@ -95,7 +95,7 @@ function napChiTiet(phong) {
   else if (phong.type === "dormitory") loaiText = "KTX";
   $("#thongso-loai").text(loaiText);
   $("#thongso-rating").text(`${phong.rating || 5.0}/5`);
-  // Tính toán bảng chi phí chi tiết dựa trên khai báo của Admin
+  // Tính toán bảng chi phí chi tiết dựa trên khai báo của người đăng
   const giaThue = phong.price || 0;
   const tienCoc = phong.deposit || 0;
   const donGiaDien = phong.electricPrice || 3500;
