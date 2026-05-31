@@ -1,7 +1,6 @@
-/* ---------- FILE: css/pages.css ---------- */
 /* Trang chủ */
 .vung-dau {
-  background: radial-gradient(circle at top, #edf5fa 0%, #fafbfd 100%);
+  background: radial-gradient(circle at top, #99c0d7 0%, #fafbfd 100%);
   padding: 90px 0 70px;
   text-align: center;
 }
@@ -14,8 +13,8 @@
 }
 .chu-chuyen-sac {
   background: linear-gradient(to right, #005eff, #00a896, #00b341);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;    /* Cắt nền theo hình dạng chữ */
+  -webkit-text-fill-color: transparent;  /* Làm chữ trong suốt để hiện nền gradient */
 }
 .mo-ta-chinh {
   font-size: 15px;
@@ -27,23 +26,20 @@
   background: var(--nen-trang);
   padding: 24px;
   border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-  max-width: 760px; /* Tăng từ 550px lên 760px để đủ khoảng trống cho cả 2 ô nhập liệu */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  max-width: 760px;
   margin: 0 auto;
   display: flex;
   gap: 15px;
   align-items: flex-end; /* Căn lề dưới bằng nhau giữa các ô và nút bấm */
 }
-
 .truong-input {
-  flex: 1; /* Ô chọn đường chiếm tỉ lệ vừa phải */
+  flex: 1;           /* Ô chọn đường chiếm tỉ lệ vừa phải */
   text-align: left;
 }
-
 .truong-input--rong {
-  flex: 1.8; /* Ô nhập địa chỉ cụ thể chiếm tỉ lệ rộng hơn (gần gấp đôi) để sinh viên dễ gõ */
+  flex: 1.8; 
 }
-
 /* Thống kê */
 .thong-ke {
   background-color: #1e293b;
@@ -65,7 +61,6 @@
   font-size: 13px;
   color: #94a3b8;
 }
-
 /* Các section trang chủ */
 .tinh-nang,
 .hanh-dong-nhanh,
@@ -84,14 +79,12 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
-
 /* Grid của khối hành động nhanh */
 .luoi-hanh-dong {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
-
 .tieu-de-vung {
   display: flex;
   justify-content: space-between;
@@ -108,7 +101,6 @@
   font-weight: 700;
   font-size: 14px;
 }
-
 /* Trang tìm kiếm */
 .trang-tim-kiem {
   display: flex;
@@ -121,8 +113,8 @@
   padding: 30px 24px;
   position: sticky;
   top: 64px;
-  height: calc(100vh - 64px);
-  overflow-y: auto;
+  height: calc(100vh - 64px); /* Chiều cao của thanh lọc bằng chiều cao của viewport trừ đi header */
+  overflow-y: auto; /* Cho phép cuộn dọc nếu nội dung vượt quá chiều cao của thanh lọc */
 }
 .dau-loc {
   display: flex;
@@ -208,15 +200,14 @@
   background: white;
   cursor: pointer;
 }
-
 /* Trang bản đồ */
 .trang-ban-do {
   height: calc(100vh - 64px);
-  position: relative;
+  position: relative; 
 }
 .khung-ban-do {
   height: 100%;
-  position: relative;
+  position: relative; 
 }
 .hop-dieu-khien-ban-do {
   position: absolute;
@@ -241,7 +232,6 @@
   font-size: 13px;
   color: var(--mau-chu-phu);
 }
-
 /* Trang chi tiết */
 .trang-chi-tiet {
   padding: 30px 0 60px;
@@ -300,7 +290,7 @@
 /* ==================== GALLERY ẢNH PHỤ (chi-tiet.html) ==================== */
 .luoi-anh-phu {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); 
   gap: 8px;
   padding: 10px 12px 12px;
   background: #f8fafc;
@@ -309,22 +299,21 @@
 .anh-phu-item {
   width: 100%;
   height: 90px;
-  object-fit: cover;
+  object-fit: cover; 
   border-radius: 8px;
-  border: 2px solid transparent;
+  border: 2px solid transparent; /* Viền trong suốt để giữ kích thước ổn định khi hover */
   cursor: pointer;
-  transition: border-color 0.2s, transform 0.2s, opacity 0.2s;
+  transition: border-color 0.2s, transform 0.2s, opacity 0.2s; 
 }
 .anh-phu-item:hover {
   border-color: var(--mau-chu-dao);
-  transform: scale(1.03);
-  opacity: 0.92;
+  transform: scale(1.03); /* Phóng to nhẹ khi hover */
+  opacity: 0.92;  /* Làm mờ nhẹ để tạo hiệu ứng nổi bật */
 }
-
 /* Lightbox phóng to ảnh phụ */
 .lightbox-overlay {
-  position: fixed;
-  inset: 0;
+  position: fixed; /* Định vị cố định để phủ lên toàn bộ màn hình */
+  inset: 0; /* Rút gọn top: 0; right: 0; bottom: 0; left: 0; */
   background: rgba(0,0,0,0.85);
   z-index: 9999;
   display: flex;
@@ -332,8 +321,8 @@
   justify-content: center;
 }
 .lightbox-overlay img {
-  max-width: 90vw;
-  max-height: 85vh;
+  max-width: 90vw; /* 90%  chìu r màn hình*/
+  max-height: 85vh; 
   border-radius: 10px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
@@ -350,12 +339,11 @@
   height: 44px;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s; 
 }
 .lightbox-dong:hover {
   background: rgba(255,255,255,0.3);
 }
-
 /* ==================== NGƯỜI ĐĂNG TIN (chi-tiet.html) ==================== */
 .the-nguoi-dang {
   padding: 24px 25px;
@@ -405,7 +393,7 @@
   color: var(--mau-chu-dao);
 }
 .leaflet-top.leaflet-left {
-  left: auto !important;
+  left: auto !important; /* Tắt định vị mặc định của Leaflet ở góc trái */
   right: 20px !important;  /* Chuyển nút zoom sang góc phải trên màn hình máy tính */
   top: 20px !important;
 }
@@ -424,7 +412,6 @@
   .tieu-de-chinh {
     font-size: 28px;
   }
-  
   /* Tinh chỉnh khối tìm kiếm nhanh trên thiết bị di động */
   .tim-kiem-nhanh {
     flex-direction: column;
@@ -446,7 +433,7 @@
   }
 
   .luoi-thong-ke {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Chuyển từ 4 cột thành 2 cột trên mobile */
   }
   .luoi-tinh-nang {
     grid-template-columns: 1fr;
@@ -500,19 +487,16 @@
     font-size: 15px;       /* Hạ cỡ chữ tiêu đề xuống 15px */
     font-weight: 700;
   }
-
   .chu-thich-ban-do {
     font-size: 11px;       /* Chú thích nhỏ gọn 11px */
     color: var(--mau-chu-phu);
   }
-
   /* Tinh chỉnh riêng thanh chọn đường trên mobile mỏng và gọn hơn */
   .hop-dieu-khien-ban-do .input-select {
     padding: 8px 12px;     /* Làm mỏng độ dày của thanh chọn */
     font-size: 13px;       /* Cỡ chữ tùy chọn 13px vừa mắt */
     border-radius: 6px;
   }
-
   /* ==================== ĐỊNH VỊ NÚT THU PHÓNG BẢN ĐỒ (MOBILE) ==================== */
   .leaflet-top.leaflet-left {
     left: auto !important;
@@ -523,7 +507,6 @@
     margin-top: 0 !important;   /* Reset lại margin đẩy dọc */
     margin-left: 0 !important;  /* Reset lại margin đẩy ngang */
   }
-
   .leaflet-bar a, 
   .leaflet-bar a:hover {
     width: 28px !important;      /* Thu hẹp chiều rộng */
@@ -531,7 +514,6 @@
     line-height: 28px !important;/* Căn giữa biểu tượng bên trong */
     font-size: 15px !important;  /* Cỡ chữ nhẹ nhàng hơn */
   }
-  
   .luoi-anh-phu {
     grid-template-columns: repeat(3, 1fr);
   }

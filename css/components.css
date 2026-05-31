@@ -1,8 +1,7 @@
-/* ---------- FILE: css/components.css ---------- */
 /* ---------- BUTTONS (chung) ---------- */
 .btn,
 .btn-giao-tiep {
-  display: inline-flex;
+  display: inline-flex;     /* Sử dụng inline-flex để các nút có thể nằm cạnh nhau và vẫn giữ được tính năng flexbox */ 
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -39,10 +38,10 @@
   padding: 12px 30px;
   font-size: 15px;
 }
-.btn--goi-y {
+/* .btn--goi-y {
   background-color: var(--nen-trang);
   color: var(--mau-chu-dao);
-}
+} */
 .btn-giao-tiep {
   width: 100%;
   padding: 12px;
@@ -59,7 +58,6 @@
   color: var(--mau-chu-text);
   border: 1px solid var(--mau-vien);
 }
-
 /* ---------- INPUTS & SELECTS ---------- */
 .input-text,
 .input-select {
@@ -69,15 +67,15 @@
   border-radius: 6px;
   font-size: 14px;
   background-color: var(--nen-trang);
-  outline: none;
+  outline: none;   /* Loại bỏ đường viền mặc định khi focus */
   color: var(--mau-chu-text);
-  transition: border-color 0.2s;
+  transition: border-color 0.2s;  /* Thêm hiệu ứng chuyển màu viền khi focus */
 }
-.input-text:focus,
+.input-text:focus,  /* Khi input được focus, thay đổi màu viền để tạo hiệu ứng nổi bật */
 .input-select:focus {
   border-color: var(--mau-chu-dao);
 }
-input[type="file"].input-text {
+input[type="file"].input-text {  /* Biến thể cho input file */
   padding: 10px;
   background-color: var(--nen-nhap);
   cursor: pointer;
@@ -87,7 +85,7 @@ input[type="file"].input-text {
   font-size: 12px;
   font-weight: 700;
   color: #475569;
-  display: block;
+  display: block;   /*ép nó tự đứng 1 dòng độc lập*/
   margin-bottom: 6px;
 }
 
@@ -107,17 +105,17 @@ input[type="file"].input-text {
 /* Thẻ tính năng */
 .the-tinh-nang,
 .hop-thong-tin-phu {
-  padding: 30px 20px;
+  padding: 15px 15px;
   text-align: center;
 }
 .icon-tinh-nang {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 24px;
   margin: 0 auto 15px auto;
 }
 .icon-tinh-nang--xanh { background-color: #ebf3ff; color: #3b82f6; }
@@ -130,11 +128,10 @@ input[type="file"].input-text {
   margin-bottom: 8px;
 }
 .mota-tinh-nang {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--mau-chu-phu);
 }
-
-/* THÀNH PHẦN: HỘP HÀNH ĐỘNG NHANH (Đã tối ưu hóa khoảng cách riêng biệt) */
+/* THÀNH PHẦN: HỘP HÀNH ĐỘNG NHANH  */
 .the-hanh-dong {
   background-color: var(--nen-trang);
   border-radius: 12px;
@@ -170,7 +167,6 @@ input[type="file"].input-text {
 }
 .noidung-hanh-dong h3 {
   font-size: 18px;
-  font-weight: 700;
   margin-bottom: 4px;
   color: var(--mau-chu-text);
 }
@@ -179,7 +175,6 @@ input[type="file"].input-text {
   color: var(--mau-chu-phu);
   margin: 0;
 }
-
 /* Grid danh sách phòng */
 .luoi-phong {
   display: grid;
@@ -286,7 +281,7 @@ input[type="file"].input-text {
   max-width: 380px;
   width: calc(100% - 40px);
   z-index: 1000;
-  overflow: hidden;
+  overflow: hidden; 
 }
 .the-phong-chon__khung {
   padding: 20px;
@@ -298,7 +293,7 @@ input[type="file"].input-text {
   border-radius: 20px;
   font-size: 11px;
   font-weight: bold;
-  display: inline-block;
+  display: inline-block;     /*kích thước trong cùng dòng các ptu khac */
   margin-bottom: 10px;
 }
 .the-phong-chon__gia {
@@ -320,7 +315,6 @@ input[type="file"].input-text {
   line-height: 28px;
   text-align: center;
 }
-
 /* Biểu phí chi tiết */
 .tieu-de-the {
   font-size: 18px;
@@ -335,7 +329,7 @@ input[type="file"].input-text {
   padding: 15px 0;
   border-bottom: 1px solid #f1f5f9;
 }
-.dong-chi-phi:last-child {
+.dong-chi-phi:last-child {    /*chọn cái cuối last*/
   border-bottom: none;
 }
 .gia-tri-chi-phi--noi-bat {
@@ -343,7 +337,6 @@ input[type="file"].input-text {
   font-size: 18px;
   font-weight: 700;
 }
-
 /* Tiện ích */
 .danh-sach-tien-ich {
   display: grid;
@@ -356,7 +349,6 @@ input[type="file"].input-text {
   gap: 8px;
   font-size: 14px;
 }
-
 /* Liên hệ chủ trọ */
 .the-lien-he {
   padding: 30px;
@@ -396,7 +388,6 @@ input[type="file"].input-text {
   flex-direction: column;
   gap: 12px;
 }
-
 /* Bản đồ con */
 #ban-do-chi-tiet,
 #ban-do-chinh {
@@ -407,7 +398,6 @@ input[type="file"].input-text {
 #ban-do-chinh {
   height: calc(100vh - 64px);
 }
-
 /* Form đăng ký */
 .form-dang-tin {
   max-width: 720px;
@@ -447,7 +437,6 @@ input[type="file"].input-text {
   width: 100%;
   max-width: 320px;
 }
-
 /* Responsive Component */
 @media (max-width: 768px) {
   .luoi-phong {

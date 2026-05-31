@@ -156,13 +156,13 @@ function napChiTiet(phong) {
   $("#lien-he-ten").text(tenNguoiDang);
   // Xử lý sự kiện nhấp các nút liên hệ trực tiếp
   $("#lien-he-btn-goi").off("click").on("click", function() {
-    alert(`Bạn có thể gọi trực tiếp đến số: ${sdtNguoiDang}`);
+    alert(`Đang kết nối tới ${sdtNguoiDang}`);
   });
   $("#lien-he-btn-nhan").off("click").on("click", function() {
     const thongTin = emailNguoiDang
-      ? `SĐT: ${sdtNguoiDang}\nEmail: ${emailNguoiDang}`
+      ? `Email: ${emailNguoiDang}`
       : `SĐT: ${sdtNguoiDang}`;
-    alert(`Thông tin liên hệ:\n${thongTin}`);
+    alert(`Chat ${thongTin}`);
   });
   $("#lien-he-btn-datlich").off("click").on("click", function() {
     alert(`Hệ thống đang hỗ trợ đặt lịch hẹn trực tiếp với ${tenNguoiDang} qua SĐT: ${sdtNguoiDang}`);

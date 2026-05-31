@@ -1,35 +1,32 @@
-/* ---------- FILE: css/layout.css ---------- */
 .khung-chua {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;  /* auto căn giữa khung chứa */
   padding: 0 15px;
 }
 
 /* Header */
 .dau-trang {
   background-color: var(--nen-trang);
-  border-bottom: 1px solid #e2e8f0;
-  position: sticky;
+  border-bottom: 1px solid #e2e8f0; /*viền nét liền*/
+  position: sticky;           /* Giữ nguyên vị trí khi cuộn trang */
   top: 0;
-  /* Tăng z-index lên 2500 để đảm bảo Header luôn nằm trên Bản đồ (z-index: 1000) */
-  z-index: 2500; 
+  z-index: 2500;                  /* thứ tự chồng lớp  Bản đồ (z-index: 1000) */
 }
 .thanh-dieu-huong {
-  display: flex;
+  display: flex;     /*xếp các lớp thành 1 hàng ngang/dọc*/
   justify-content: space-between;
-  align-items: center;
+  align-items: center;    /*căn chỉnh các phần tử con theo trục dọc*/
   padding: 12px 0;
-  position: relative;
+  position: relative;   /*định vị tương đối để chứa menu dropdown trên mobile*/
 }
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
   font-size: 22px;
   font-weight: 700;
   color: var(--mau-chu-dao);
-  text-decoration: none;
+  text-decoration: none;    /* Bỏ gạch chân */
 }
 .menu {
   display: flex;
@@ -43,8 +40,8 @@
   font-size: 14px;
   font-weight: 500;
   padding: 8px 16px;
-  border-radius: 20px;
-  transition: all 0.2s;
+  border-radius: 20px;    /*bo gốc*/
+  transition: all 0.2s;   /* Hiệu ứng đổi màu hover hoặc active  0.2s*/
 }
 .menu__link:hover,
 .menu__link.active {
@@ -53,15 +50,12 @@
 }
 .hanh-dong {
   display: flex;
-  gap: 12px;
   align-items: center;
 }
-
-/* Ẩn đăng tin thừa trên mobile */
+/* ẩn nút */
 .muc-menu-mobile {
   display: none;
 }
-
 /* Nút Hamburger 3 gạch */
 .nut-menu-hamburger {
   display: none;
@@ -69,9 +63,9 @@
   justify-content: space-between;
   width: 24px;
   height: 18px;
-  background: transparent;
+  background: transparent; /* Nền trong suốt để chỉ hiển thị 3 gạch */
   border: none;
-  cursor: pointer;
+  cursor: pointer;   /* Hiển thị con trỏ khi hover vào nút */
   z-index: 1100;
 }
 .nut-menu-hamburger span {
@@ -81,18 +75,6 @@
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-
-/* Hiệu ứng xoay của 3 gạch khi active */
-.nut-menu-hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.nut-menu-hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.nut-menu-hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
 /* Footer */
 .chan-trang {
   background-color: #1e293b;
@@ -104,12 +86,14 @@
 
 /* ==================== RESPONSIVE HEADER CHO MOBILE ==================== */
 @media (max-width: 768px) {
+
   .nut-menu-hamburger {
     display: flex;
   }
   .nut-dang-tin-desktop {
     display: none !important;
   }
+
   .muc-menu-mobile {
     display: block;
     width: 100%;
@@ -120,13 +104,13 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 80%;               /* Khoảng cách vừa phải ngay dưới nút 3 gạch */
-    right: 15px;            /* Căn lề phải thẳng hàng với nút bấm */
+    top: 70%;               /* Khoảng cách vừa phải ngay dưới nút 3 gạch */
+    right: 15px;           
     left: auto;             /* Hủy bỏ co dãn tràn lề trái */
     width: 180px;           /* Khóa khung nhỏ gọn, xinh xắn */
     background: var(--nen-trang);
     border: 1px solid var(--mau-vien);
-    border-radius: 12px;    /* Bo góc mềm mại giống app di động */
+    border-radius: 12px;    
     padding: 8px 0;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Tạo chiều sâu nổi hẳn lên trên bản đồ */
     z-index: 3000;
@@ -151,19 +135,14 @@
     font-weight: 600;
     color: var(--mau-chu-text);
   }
-  
-  /* Tạo dải màu nền mỏng khi lướt ngón tay qua hoặc kích hoạt */
   .menu__link:hover,
   .menu__link.active {
     background-color: #f1f5f9;
     color: var(--mau-chu-dao);
   }
-    /* ==================== TINH CHỈNH CHỮ VÀ BỐ CỤC FOOTER TRÊN MOBILE ==================== */
   .chan-trang {
-    padding: 14px 10px;      /* Thu hẹp khoảng đệm trên dưới gọn gàng hơn */
-    font-size: 11px;         /* Cỡ chữ 11px tinh tế, đúng chuẩn chú thích chân trang */
-    line-height: 1.5;        /* Giữ khoảng cách giữa các dòng thông thoáng */
-    opacity: 0.85;           /* Giảm độ sáng của chữ để dịu mắt, tăng tính thẩm mỹ */
-    letter-spacing: 0.2px;   /* Giãn nhẹ khoảng cách giữa các ký tự giúp dễ đọc */
+    padding: 14px 10px;   
+    font-size: 11px;        
+    opacity: 0.75;           /* Giảm độ sáng của chữ */
   }
 }
