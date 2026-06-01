@@ -67,15 +67,15 @@
   border-radius: 6px;
   font-size: 14px;
   background-color: var(--nen-trang);
-  outline: none;   /* Loại bỏ đường viền mặc định khi focus */
+  outline: none;                                 /* Loại bỏ đường viền mặc định khi focus */
   color: var(--mau-chu-text);
-  transition: border-color 0.2s;  /* Thêm hiệu ứng chuyển màu viền khi focus */
+  transition: border-color 0.2s;                          /* Thêm hiệu ứng chuyển màu viền khi focus */
 }
-.input-text:focus,  /* Khi input được focus, thay đổi màu viền để tạo hiệu ứng nổi bật */
+.input-text:focus,                                 /* Khi input được focus, thay đổi màu viền để tạo hiệu ứng nổi bật */
 .input-select:focus {
   border-color: var(--mau-chu-dao);
 }
-input[type="file"].input-text {  /* Biến thể cho input file */
+input[type="file"].input-text {                          /* Biến thể cho input file */
   padding: 10px;
   background-color: var(--nen-nhap);
   cursor: pointer;
@@ -85,7 +85,7 @@ input[type="file"].input-text {  /* Biến thể cho input file */
   font-size: 12px;
   font-weight: 700;
   color: #475569;
-  display: block;   /*ép nó tự đứng 1 dòng độc lập*/
+  display: block;                       /*ép nó tự đứng 1 dòng độc lập*/
   margin-bottom: 6px;
 }
 
@@ -293,7 +293,7 @@ input[type="file"].input-text {  /* Biến thể cho input file */
   border-radius: 20px;
   font-size: 11px;
   font-weight: bold;
-  display: inline-block;     /*kích thước trong cùng dòng các ptu khac */
+  display: inline-block;                       /*kích thước trong cùng dòng các ptu khac */
   margin-bottom: 10px;
 }
 .the-phong-chon__gia {
@@ -329,7 +329,7 @@ input[type="file"].input-text {  /* Biến thể cho input file */
   padding: 15px 0;
   border-bottom: 1px solid #f1f5f9;
 }
-.dong-chi-phi:last-child {    /*chọn cái cuối last*/
+.dong-chi-phi:last-child {                          /*chọn cái cuối last*/
   border-bottom: none;
 }
 .gia-tri-chi-phi--noi-bat {

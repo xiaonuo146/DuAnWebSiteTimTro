@@ -6,50 +6,43 @@ function khoiTaoMenuMobile() {
   const $thanhMenu = $("#thanh-menu");
   if ($nutHamburger.length) {
     $nutHamburger.off("click").on("click", function(e) {
-      e.stopPropagation();
+      e.stopPropagation();                                                  /* Ngăn chặn sự kiện click lan ra ngoài */
       $thanhMenu.toggleClass("active");
-      $(this).toggleClass("active");
     });
     // Đóng menu khi nhấp ngoài vùng
     $(document).on("click", function(e) {
-      if (!$(e.target).closest(".thanh-dieu-huong").length) {
+      if (!$(e.target).closest(".thanh-dieu-huong").length) {                     /* Kiểm tra nếu click không phải trên menu hoặc nút hamburger */
         $thanhMenu.removeClass("active");
-        $nutHamburger.removeClass("active");
       }
     });
   }
 }
-// ==================== HIỂN THỊ DANH SÁCH CARD PHÒNG ====================
+// ==================== HIỂN THỊ DANH SÁCH CARD PHÒNG (Tìm kiếm) ====================
 function hienThiPhong(ds, containerId) {
   const $container = $(containerId);
   if (!$container.length) return;
-  $container.empty();
+  $container.empty();                                                            /* Xóa nội dung cũ trước khi hiển thị mới */
   if (!ds.length) {
     $container.html('<p class="thong-bao-trong">Không có phòng trọ phù hợp.</p>');
     return;
   }
-  const template = document.getElementById("mau-card-phong");
-  if (!template) return;
-  ds.forEach(p => {
-    const clone = document.importNode(template.content, true);
+  const template = document.getElementById("mau-card-phong");                               /* Lấy template từ DOM */
+  if (!template) return; 
+  ds.forEach(p => {                                                                 /* Duyệt qua từng phòng trong danh sách và tạo card tương ứng */
+    const clone = document.importNode(template.content, true);                               /* Clone nội dung template để tạo card mới */
     const $clone = $(clone);
-    $clone.find(".card-phong").attr("href", `chi-tiet.html?id=${p.id}`);
+    $clone.find(".card-phong").attr("href", `chi-tiet.html?id=${p.id}`); 
     $clone.find(".card-phong__nhan").text(p.tag || "Còn phòng");
     if (p.image) {
-      $clone.find(".card-phong__anh-that").attr("src", p.image).show();
-      $clone.find(".room-image-placeholder").hide();
-    } else {
-      $clone.find(".card-phong__anh-that").hide();
-      $clone.find(".room-image-placeholder").show();
-    }
+      $clone.find(".card-phong__anh-that").attr("src", p.image).show(); 
+    } 
     $clone.find(".card-phong__tieu-de").text(p.title);
     $clone.find(".card-phong__dia-chi").text(`📍 ${p.address}`);
     $clone.find(".card-phong-dien-tich").text(`📐 ${p.area} m²`);
-    let loaiText = "🚪 Phòng đơn";
-    if (p.type === "double") loaiText = "🚪 Phòng đôi";
-    else if (p.type === "dormitory") loaiText = "🚪 Ký túc xá";
+    let loaiText = "🚪 Phòng đơn"; /*mặc định */
+      if (p.type === "double") loaiText = "🚪 Phòng đôi";
     $clone.find(".card-phong-loai-phong").text(loaiText);
-    $clone.find(".card-phong__gia").text(`${(p.price || 0).toLocaleString()}đ`);
+    $clone.find(".card-phong__gia").text(`${(p.price || 0).toLocaleString()}đ`);                   /* Hiển thị giá với định dạng tiền tệ */
     $container.append($clone);
   });
 }
@@ -59,13 +52,13 @@ function locVaHienThi() {
   const duong = $("#chon-duong").val();
   const giaMin = parseInt($("#loc-gia-thap").val()) || 0;
   const giaMax = parseInt($("#loc-gia-cao").val()) || 1e12;
-  const loaiChon = $(".loc-loai-phong:checked").map((i, el) => $(el).val()).get();
+  const loaiChon = $(".loc-loai-phong:checked").map((i, el) => $(el).val()).get();       /* i duyệt qua từng ptu, lấy chính xác ptu dom đó get chuyển thành mảng  */
   const tienIchChon = $(".loc-tien-ich:checked").map((i, el) => $(el).val()).get();
   const sapXep = $("#sap-xep").val();
   ds = ds.filter(p => {
     if (duong !== "all" && p.street !== duong) return false;
     if (p.price < giaMin || p.price > giaMax) return false;
-    if (loaiChon.length && !loaiChon.includes(p.type)) return false;
+    if (loaiChon.length && !loaiChon.includes(p.type)) return false;                /* Nếu có loại phòng được chọn mà phòng hiện tại không thuộc loại đó thì loại bỏ */
     if (tienIchChon.length && !tienIchChon.every(ti => (p.amenities || []).includes(ti))) return false;
     return true;
   });
@@ -74,13 +67,13 @@ function locVaHienThi() {
   hienThiPhong(ds, "#danh-sach-tim-kiem");
   $("#so-luong-phong").text(`Tìm thấy ${ds.length} phòng trọ`);
 }
-// ==================== TRANG CHI TIẾT PHÒNG TRỌ (DATA ADMIN) ====================
+// ==================== TRANG CHI TIẾT PHÒNG TRỌ (DATA user) ====================
 function napChiTiet(phong) {
   $("#duong-dan-tieu-de, #chi-tiet-ten").text(phong.title);
-  document.title = `${phong.title} - NhaTroSV`;
+  document.title = `${phong.title} - NhaTroSV`;                                 /*cập nhập tiêu đề trang động theo tên phòng trên tap td*/
   $("#chi-tiet-dia-chi").text(`📍 ${phong.address}`);
   $("#chi-tiet-khoang-cach").text(`🏫 Khu vực đường ${phong.street}, Ea Tam`);
-  $("#chi-tiet-rating").html(`★ ${phong.rating || 5.0} (Đánh giá của sinh viên)`);
+  $("#chi-tiet-rating").html(`★★★★★ ${phong.rating || 5.0} (Đánh giá mô phỏng)`);
   $("#chi-tiet-tag").text(phong.tag || "Còn phòng");
   if (phong.image) {
     $("#chi-tiet-anh").attr("src", phong.image).show();

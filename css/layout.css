@@ -1,24 +1,24 @@
 .khung-chua {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;  /* auto căn giữa khung chứa */
+  margin: 0 auto;                          /* auto căn giữa khung chứa */
   padding: 0 15px;
 }
 
 /* Header */
 .dau-trang {
   background-color: var(--nen-trang);
-  border-bottom: 1px solid #e2e8f0; /*viền nét liền*/
-  position: sticky;           /* Giữ nguyên vị trí khi cuộn trang */
+  border-bottom: 1px solid #e2e8f0;    
+  position: sticky;                         /* Giữ nguyên vị trí khi cuộn trang */
   top: 0;
-  z-index: 2500;                  /* thứ tự chồng lớp  Bản đồ (z-index: 1000) */
+  z-index: 2500;                           /* thứ tự chồng lớp  Bản đồ (z-index: 1000) */
 }
 .thanh-dieu-huong {
-  display: flex;     /*xếp các lớp thành 1 hàng ngang/dọc*/
+  display: flex;                        /*xếp các lớp thành 1 hàng ngang/dọc*/
   justify-content: space-between;
-  align-items: center;    /*căn chỉnh các phần tử con theo trục dọc*/
+  align-items: center;                   /*căn chỉnh các phần tử con theo trục dọc*/
   padding: 12px 0;
-  position: relative;   /*định vị tương đối để chứa menu dropdown trên mobile*/
+  position: relative;                   /*định vị tương đối để chứa menu dropdown trên mobile*/
 }
 .logo {
   display: flex;
@@ -26,7 +26,7 @@
   font-size: 22px;
   font-weight: 700;
   color: var(--mau-chu-dao);
-  text-decoration: none;    /* Bỏ gạch chân */
+  text-decoration: none;            
 }
 .menu {
   display: flex;
@@ -40,8 +40,8 @@
   font-size: 14px;
   font-weight: 500;
   padding: 8px 16px;
-  border-radius: 20px;    /*bo gốc*/
-  transition: all 0.2s;   /* Hiệu ứng đổi màu hover hoặc active  0.2s*/
+  border-radius: 20px;    
+  transition: all 0.2s;                  /* Hiệu ứng đổi màu hover  trong 0.2s*/
 }
 .menu__link:hover,
 .menu__link.active {
@@ -63,9 +63,9 @@
   justify-content: space-between;
   width: 24px;
   height: 18px;
-  background: transparent; /* Nền trong suốt để chỉ hiển thị 3 gạch */
+  background: transparent;                    /* Nền trong suốt để chỉ hiển thị 3 gạch */
   border: none;
-  cursor: pointer;   /* Hiển thị con trỏ khi hover vào nút */
+  cursor: pointer;                            /* Hiển thị con trỏ khi hover vào nút */
   z-index: 1100;
 }
 .nut-menu-hamburger span {
@@ -93,44 +93,41 @@
   .nut-dang-tin-desktop {
     display: none !important;
   }
-
   .muc-menu-mobile {
     display: block;
     width: 100%;
   }
-  
   /* Thiết kế lại khung menu: nhỏ gọn, bo góc và nổi bên góc phải */
   .menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70%;               /* Khoảng cách vừa phải ngay dưới nút 3 gạch */
+    top: 70%;                                    /* Khoảng cách vừa phải ngay dưới nút 3 gạch */
     right: 15px;           
-    left: auto;             /* Hủy bỏ co dãn tràn lề trái */
-    width: 180px;           /* Khóa khung nhỏ gọn, xinh xắn */
+    left: auto;                                 /* Hủy bỏ co dãn tràn lề trái */
+    width: 180px;                               /* Khóa khung nhỏ gọn, xinh xắn */
     background: var(--nen-trang);
     border: 1px solid var(--mau-vien);
     border-radius: 12px;    
     padding: 8px 0;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Tạo chiều sâu nổi hẳn lên trên bản đồ */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);               /* Tạo chiều sâu nổi hẳn lên trên bản đồ */
     z-index: 3000;
   }
   
   .menu.active {
     display: flex;
   }
-  
   /* Căn chỉnh lại các mục bên trong menu compact */
   .menu li {
     width: 100%;
     margin: 0;
-    text-align: left;       /* Căn lề trái nội dung chữ cho tự nhiên */
+    text-align: left;                   
   }
   
   .menu__link {
     display: block;
     padding: 12px 20px;
-    border-radius: 0;       /* Chuyển về dạng phẳng phẳng lỳ bên trong thẻ card */
+    border-radius: 0;                /* Chuyển về dạng phẳng phẳng lỳ bên trong thẻ card */
     font-size: 14px;
     font-weight: 600;
     color: var(--mau-chu-text);
@@ -143,6 +140,6 @@
   .chan-trang {
     padding: 14px 10px;   
     font-size: 11px;        
-    opacity: 0.75;           /* Giảm độ sáng của chữ */
+    opacity: 0.75;                       /* Giảm độ sáng của chữ */
   }
 }

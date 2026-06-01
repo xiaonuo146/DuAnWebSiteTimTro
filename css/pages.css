@@ -13,8 +13,8 @@
 }
 .chu-chuyen-sac {
   background: linear-gradient(to right, #005eff, #00a896, #00b341);
-  -webkit-background-clip: text;    /* Cắt nền theo hình dạng chữ */
-  -webkit-text-fill-color: transparent;  /* Làm chữ trong suốt để hiện nền gradient */
+  -webkit-background-clip: text;                    /* Cắt nền theo hình dạng chữ */
+  -webkit-text-fill-color: transparent;              /* Làm chữ trong suốt để hiện nền gradient */
 }
 .mo-ta-chinh {
   font-size: 15px;
@@ -31,10 +31,10 @@
   margin: 0 auto;
   display: flex;
   gap: 15px;
-  align-items: flex-end; /* Căn lề dưới bằng nhau giữa các ô và nút bấm */
+  align-items: flex-end;                  /* Căn lề dưới bằng nhau giữa các ô và nút bấm */
 }
 .truong-input {
-  flex: 1;           /* Ô chọn đường chiếm tỉ lệ vừa phải */
+  flex: 1;                                /* Ô chọn đường chiếm tỉ lệ vừa phải */
   text-align: left;
 }
 .truong-input--rong {
@@ -113,8 +113,8 @@
   padding: 30px 24px;
   position: sticky;
   top: 64px;
-  height: calc(100vh - 64px); /* Chiều cao của thanh lọc bằng chiều cao của viewport trừ đi header */
-  overflow-y: auto; /* Cho phép cuộn dọc nếu nội dung vượt quá chiều cao của thanh lọc */
+  height: calc(100vh - 64px);                 /* Chiều cao của thanh lọc bằng chiều cao của viewport trừ đi header */
+  overflow-y: auto;                           /* Cho phép cuộn dọc nếu nội dung vượt quá chiều cao của thanh lọc */
 }
 .dau-loc {
   display: flex;
@@ -301,19 +301,19 @@
   height: 90px;
   object-fit: cover; 
   border-radius: 8px;
-  border: 2px solid transparent; /* Viền trong suốt để giữ kích thước ổn định khi hover */
+  border: 2px solid transparent;          /* Viền trong suốt để giữ kích thước ổn định khi hover */
   cursor: pointer;
   transition: border-color 0.2s, transform 0.2s, opacity 0.2s; 
 }
 .anh-phu-item:hover {
   border-color: var(--mau-chu-dao);
-  transform: scale(1.03); /* Phóng to nhẹ khi hover */
-  opacity: 0.92;  /* Làm mờ nhẹ để tạo hiệu ứng nổi bật */
+  transform: scale(1.03);                   /* Phóng to nhẹ khi hover */
+  opacity: 0.92;                             /* Làm mờ nhẹ để tạo hiệu ứng nổi bật */
 }
 /* Lightbox phóng to ảnh phụ */
 .lightbox-overlay {
-  position: fixed; /* Định vị cố định để phủ lên toàn bộ màn hình */
-  inset: 0; /* Rút gọn top: 0; right: 0; bottom: 0; left: 0; */
+  position: fixed;                        /* Định vị cố định để phủ lên toàn bộ màn hình */
+  inset: 0;                             /* Rút gọn top: 0; right: 0; bottom: 0; left: 0; */
   background: rgba(0,0,0,0.85);
   z-index: 9999;
   display: flex;
@@ -393,16 +393,16 @@
   color: var(--mau-chu-dao);
 }
 .leaflet-top.leaflet-left {
-  left: auto !important; /* Tắt định vị mặc định của Leaflet ở góc trái */
-  right: 20px !important;  /* Chuyển nút zoom sang góc phải trên màn hình máy tính */
+  left: auto !important;                    /* Tắt định vị mặc định của Leaflet ở góc trái */
+  right: 20px !important;                   /* Chuyển nút zoom sang góc phải trên màn hình máy tính */
   top: 20px !important;
 }
 .leaflet-bar a, 
 .leaflet-bar a:hover {
-  width: 45px !important;       /* Chiều rộng nút lớn hơn */
-  height: 45px !important;      /* Chiều cao nút lớn hơn */
-  line-height: 43px !important; /* Căn giữa biểu tượng dấu + và - */
-  font-size: 26px !important;   /* Biểu tượng hiển thị to hơn */
+  width: 45px !important;                    /* Chiều rộng nút lớn hơn */
+  height: 45px !important;                   /* Chiều cao nút lớn hơn */
+  line-height: 43px !important;             /* Căn giữa biểu tượng dấu + và - */
+  font-size: 26px !important;               /* Biểu tượng hiển thị to hơn */
 }
 /* Responsive thiết bị di động */
 @media (max-width: 768px) {
@@ -415,25 +415,25 @@
   /* Tinh chỉnh khối tìm kiếm nhanh trên thiết bị di động */
   .tim-kiem-nhanh {
     flex-direction: column;
-    align-items: stretch; /* Đảm bảo tất cả các ô con kéo giãn hết chiều rộng */
+    align-items: stretch;                     /* Đảm bảo tất cả các ô con kéo giãn hết chiều rộng */
     padding: 20px;
     width: 100%;
-    gap: 16px; /* Khoảng cách dọc đều đặn giữa các ô */
+    gap: 16px;                            /* Khoảng cách dọc đều đặn giữa các ô */
   }
   
   .truong-input,
   .truong-input--rong {
     width: 100%;
-    flex: none; /* Khử chế độ flex-grow của desktop để các ô xếp chồng tự nhiên */
+    flex: none;                         /* Khử chế độ flex-grow của desktop để các ô xếp chồng tự nhiên */
   }
   
   .tim-kiem-nhanh button {
     width: 100%;
-    padding: 14px; /* Tăng nhẹ độ dày nút trên điện thoại để dễ chạm nhấn */
+    padding: 14px;                         
   }
 
   .luoi-thong-ke {
-    grid-template-columns: 1fr 1fr; /* Chuyển từ 4 cột thành 2 cột trên mobile */
+    grid-template-columns: 1fr 1fr;  
   }
   .luoi-tinh-nang {
     grid-template-columns: 1fr;
@@ -471,48 +471,48 @@
   }
   /* ==================== TINH CHỈNH COMPACT HỘP ĐIỀU KHIỂN BẢN ĐỒ TRÊN MOBILE ==================== */
   .hop-dieu-khien-ban-do {
-    top: 10px;             /* Đưa hộp sát lên phía trên góc màn hình */
-    left: 10px;            /* Sát lề trái */
-    right: 70px;           /* Sát lề phải */
-    padding: 10px 14px;    /* Co hẹp khoảng đệm bên trong hộp */
-    border-radius: 8px;    /* Bo góc gọn hơn phù hợp kích thước mới */
+    top: 10px;                          /* Đưa hộp sát lên phía trên góc màn hình */
+    left: 10px;                         /* Sát lề trái */
+    right: 70px;                        /* Sát lề phải */
+    padding: 10px 14px;                 /* Co hẹp khoảng đệm bên trong hộp */
+    border-radius: 8px;                 /* Bo góc gọn hơn phù hợp kích thước mới */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
   .dau-ban-do {
-    margin-bottom: 6px;    /* Thu nhỏ khoảng cách giữa tiêu đề và ô chọn đường */
+    margin-bottom: 6px;                     /* Thu nhỏ khoảng cách giữa tiêu đề và ô chọn đường */
   }
 
   .tieu-de-ban-do {
-    font-size: 15px;       /* Hạ cỡ chữ tiêu đề xuống 15px */
+    font-size: 15px;                        /* Hạ cỡ chữ tiêu đề xuống 15px */
     font-weight: 700;
   }
   .chu-thich-ban-do {
-    font-size: 11px;       /* Chú thích nhỏ gọn 11px */
+    font-size: 11px;                       /* Chú thích nhỏ gọn 11px */
     color: var(--mau-chu-phu);
   }
   /* Tinh chỉnh riêng thanh chọn đường trên mobile mỏng và gọn hơn */
   .hop-dieu-khien-ban-do .input-select {
-    padding: 8px 12px;     /* Làm mỏng độ dày của thanh chọn */
-    font-size: 13px;       /* Cỡ chữ tùy chọn 13px vừa mắt */
+    padding: 8px 12px;                    /* Làm mỏng độ dày của thanh chọn */
+    font-size: 13px;                      /* Cỡ chữ tùy chọn 13px vừa mắt */
     border-radius: 6px;
   }
   /* ==================== ĐỊNH VỊ NÚT THU PHÓNG BẢN ĐỒ (MOBILE) ==================== */
   .leaflet-top.leaflet-left {
     left: auto !important;
-    right: 10px !important; /* Chuyển nút thu phóng sát góc phải điện thoại */
+    right: 10px !important;                /* Chuyển nút thu phóng sát góc phải điện thoại */
     top: 10px !important;
   }
   .leaflet-top .leaflet-control-zoom {
-    margin-top: 0 !important;   /* Reset lại margin đẩy dọc */
-    margin-left: 0 !important;  /* Reset lại margin đẩy ngang */
+    margin-top: 0 !important;             /* Reset lại margin đẩy dọc */
+    margin-left: 0 !important;              /* Reset lại margin đẩy ngang */
   }
   .leaflet-bar a, 
   .leaflet-bar a:hover {
-    width: 28px !important;      /* Thu hẹp chiều rộng */
-    height: 28px !important;     /* Thu hẹp chiều cao */
-    line-height: 28px !important;/* Căn giữa biểu tượng bên trong */
-    font-size: 15px !important;  /* Cỡ chữ nhẹ nhàng hơn */
+    width: 28px !important;               /* Thu hẹp chiều rộng */
+    height: 28px !important;                /* Thu hẹp chiều cao */
+    line-height: 28px !important;         /* Căn giữa biểu tượng bên trong */
+    font-size: 15px !important;             /* Cỡ chữ nhẹ nhàng hơn */
   }
   .luoi-anh-phu {
     grid-template-columns: repeat(3, 1fr);
